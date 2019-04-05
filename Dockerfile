@@ -1,4 +1,4 @@
-FROM python:3.6-alpine
+FROM python:3.7-alpine
 MAINTAINER Salvador Leon Vaz
 
 ENV PYTHONUNBUFFERED 1
@@ -10,5 +10,5 @@ RUN mkdir /app
 WORKDIR /app
 COPY ./app /app
 
-RUN adduser -D user
-USER user
+#RUN adduser -D user
+#USER user
