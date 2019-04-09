@@ -34,7 +34,7 @@ class PublicUserApiTests(TestCase):
         self.assertTrue(user.check_password(payload['password']))
         self.assertNotIn('password', res.data)
 
-    def tes_user_exists(self):
+    def test_user_exists(self):
         """Test creating user that already exists fails"""
         payload = {'email': 'test@gmail.com', 'password': '123456'}
         create_user(**payload)
@@ -106,7 +106,7 @@ class PrivateUserApiTests(TestCase):
         self.client = APIClient()
         self.client.force_authenticate(user=self.user)
 
-    def test_retrive_profile_seccess(self):
+    def test_retrive_profile_success(self):
         """Test retriving profile for logged in user"""
         res = self.client.get(ME_URL)
 
